@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MentalHealthApp</string>
+    <string name="no_records">No records found.</string>
 </resources>
