@@ -1,0 +1,59 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/soft_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- App Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mental Health Check-In"
+        android:textSize="32sp"
+        android:textColor="#2E3A59"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-medium"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"/>
+
+    <!-- App Subtitle -->
+    <TextView
+        android:text="Your well-being, simplified."
+        android:textSize="16sp"
+        android:textColor="@color/secondaryText"
+        android:gravity="center"
+        android:layout_marginBottom="64dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Log In Button -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:text="Log In"
+        android:textColor="@android:color/white"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/buttonPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:padding="16dp"
+        app:cornerRadius="16dp"/>
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:text="Register"
+        android:textColor="@color/buttonPrimary"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/buttonSecondary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:cornerRadius="16dp"/>
+
+</LinearLayout>

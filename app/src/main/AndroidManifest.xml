@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mentalhealthapp">
 
-    <!-- Permission to access internet if you ever need it -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalHealthApp">
 
+        <!-- Launch screen -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,17 +22,26 @@
             </intent-filter>
         </activity>
 
-        <!-- Main Activity – home screen after login -->
-        <activity android:name=".MainActivity" />
+        <!-- Login screen -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+
+        <!-- Register screen -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="true" />
+
+        <!-- Post-login dashboard -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
 
         <!-- Check-In Activity -->
         <activity android:name=".CheckInActivity" />
 
         <!-- History Activity -->
         <activity android:name=".HistoryActivity" />
-
-        <!-- Register Activity -->
-        <activity android:name=".RegisterActivity" />
 
         <!-- Change Password Activity -->
         <activity android:name=".ChangePasswordActivity" />
@@ -41,5 +50,4 @@
         <activity android:name=".SearchActivity" />
 
     </application>
-
 </manifest>

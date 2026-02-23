@@ -1,7 +1,114 @@
-<TextView
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:text="Screen Under Construction"
-    android:textSize="24sp"/>
+    android:background="@color/soft_background"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/tvCheckInTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Daily Check-In"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryText"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Mood selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How are you feeling today?"
+            android:textSize="18sp"
+            android:textColor="@color/primaryText"
+            android:layout_marginBottom="12dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgMood"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/moodHappy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="😃 Happy"
+                android:layout_marginEnd="12dp"/>
+
+            <RadioButton
+                android:id="@+id/moodNeutral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="😐 Neutral"
+                android:layout_marginEnd="12dp"/>
+
+            <RadioButton
+                android:id="@+id/moodSad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="😔 Sad"
+                android:layout_marginEnd="12dp"/>
+
+            <RadioButton
+                android:id="@+id/moodStressed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="😩 Stressed"/>
+        </RadioGroup>
+
+        <!-- Stress level slider -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stress Level (0-10)"
+            android:textSize="18sp"
+            android:textColor="@color/primaryText"
+            android:layout_marginBottom="12dp"/>
+
+        <SeekBar
+            android:id="@+id/seekStress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Optional notes -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notes (optional)"
+            android:textSize="18sp"
+            android:textColor="@color/primaryText"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/etNotes"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@color/buttonSecondary"
+            android:padding="12dp"
+            android:gravity="top"
+            android:hint="Write anything here..."
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Submit button -->
+        <Button
+            android:id="@+id/btnSubmitCheckIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:backgroundTint="@color/buttonPrimary"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+</ScrollView>

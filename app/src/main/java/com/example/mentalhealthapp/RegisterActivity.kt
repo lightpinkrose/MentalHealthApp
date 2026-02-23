@@ -13,7 +13,7 @@ class RegisterActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_register) // Make sure XML is named activity_register.xml
+        setContentView(R.layout.activity_register)
 
         db = DatabaseHelper(this)
 
@@ -23,23 +23,25 @@ class RegisterActivity : AppCompatActivity() {
         val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnRegister.setOnClickListener {
+
             val username = etUsername.text.toString().trim()
             val password = etPassword.text.toString()
             val confirmPassword = etConfirmPassword.text.toString()
 
-            // Validate inputs
+            // Check empty fields
             if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
+            // Check passwords match
             if (password != confirmPassword) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Password complexity: at least 6 characters, must contain a number
-            val passwordPattern = Regex("^(?=.*[0-9]).{6,}\$")
+            // Password rule: 6+ chars and at least one number
+            val passwordPattern = Regex("^(?=.*[0-9]).{6,}$")
             if (!password.matches(passwordPattern)) {
                 Toast.makeText(
                     this,
@@ -49,13 +51,12 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Add user to the database
-            val success = db.addUser(username, password)
+            // Insert user
+            val success = db.insertUser(username, password)
+
             if (success) {
                 Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
-                // Go to Login screen after registration
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             } else {
                 Toast.makeText(this, "Username already exists", Toast.LENGTH_SHORT).show()

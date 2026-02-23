@@ -29,8 +29,10 @@ class LoginActivity : AppCompatActivity() {
 
             if (db.checkUser(username, password)) {
                 Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show()
-                // Redirect to main screen
-                startActivity(Intent(this, MainActivity::class.java))
+                // Redirect to Home screen
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("username", username)
+                startActivity(intent)
                 finish()
             } else {
                 Toast.makeText(this, "Invalid username or password.", Toast.LENGTH_SHORT).show()

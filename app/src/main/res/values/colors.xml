@@ -1,7 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Your custom colors -->
+    <color name="soft_background">#FFF5F5F5</color>
+    <color name="primaryText">#2E2E2E</color>
+    <color name="secondaryText">#7A7A7A</color>
+    <color name="buttonPrimary">#4CAF50</color>
+    <color name="buttonSecondary">#E0E0E0</color>
+
+    <!-- Required default colors -->
     <color name="purple_500">#6200EE</color>
     <color name="purple_700">#3700B3</color>
     <color name="teal_700">#018786</color>
-    <color name="blue_700">#1976D2</color>
     <color name="white">#FFFFFF</color>
 </resources>
