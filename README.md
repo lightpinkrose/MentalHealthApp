@@ -158,6 +158,5 @@ Refactoring and usability enhancements
 
 ***Demo Video***
 
-A 5-minute professional demonstration of the application is included in the project root folder.
-
-https://youtu.be/h_gntEk24Gw
+*A 5-minute professional demonstration of the application is included in the project root folder.*
+*[https://youtu.be/h_gntEk24Gw]*
