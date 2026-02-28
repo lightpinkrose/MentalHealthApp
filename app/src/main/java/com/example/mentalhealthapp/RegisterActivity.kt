@@ -23,24 +23,22 @@ class RegisterActivity : AppCompatActivity() {
         val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnRegister.setOnClickListener {
-
             val username = etUsername.text.toString().trim()
             val password = etPassword.text.toString()
             val confirmPassword = etConfirmPassword.text.toString()
 
-            // Check empty fields
+            // Validate inputs
             if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Check passwords match
             if (password != confirmPassword) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Password rule: 6+ chars and at least one number
+            // Password complexity: at least 6 characters, must contain a number
             val passwordPattern = Regex("^(?=.*[0-9]).{6,}$")
             if (!password.matches(passwordPattern)) {
                 Toast.makeText(
@@ -51,8 +49,8 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Insert user
-            val success = db.insertUser(username, password)
+            // IMPORTANT: This is the correct function name (NOT insertUser)
+            val success = db.addUser(username, password)
 
             if (success) {
                 Toast.makeText(this, "Registration successful!", Toast.LENGTH_SHORT).show()
